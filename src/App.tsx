@@ -80,7 +80,6 @@ function App() {
                 </div>
             </div>
             <List clans={ clans }></List>
-
         </div>
     )
 }
