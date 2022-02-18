@@ -3,4 +3,6 @@ export interface ISurePromise <T> {
     data: T
     status: number
     blob?: Blob
+    error?: string
+    paging?: {}
 }

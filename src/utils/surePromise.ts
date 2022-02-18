@@ -16,20 +16,46 @@ const surePromise = <T> (promise: Promise<AxiosResponse>): Promise<ISurePromise<
             const { data, status, request } = result
             return {
                 success: true,
-                data: data.data,
+                data: data.items,
                 status,
                 blob: request.responseType === 'blob' ? data : null,
+                paging: data.paging
             }
         })
         .catch(error => {
+            console.log('el errro', error)
             if (!!error.isAxiosError && !error.response) {
                 throw error
             } else {
                 const { data, status } = error.response
-                return Promise.resolve({ success: false, data: data.data, status })
+                return Promise.resolve({ success: false, data: data.data, status, error })
             }
 
         })
 )
 
-export default surePromise
+const surePromiseServer = <T> (promise: Promise<AxiosResponse>): Promise<ISurePromise<T>> => (
+    promise
+        .then((result) => {
+            const { data, status, request } = result
+            return {
+                success: true,
+                data: data,
+                status,
+                blob: request.responseType === 'blob' ? data : null,
+                paging: data.paging
+            }
+        })
+        .catch(error => {
+            console.log('el errro', error)
+            if (!!error.isAxiosError && !error.response) {
+                throw error
+            } else {
+                const { data, status } = error.response
+                return Promise.resolve({ success: false, data: data.data, status, error })
+            }
+
+        })
+)
+
+export { surePromise, surePromiseServer }

@@ -1,8 +1,9 @@
-import { ISurePromise } from '../../interfaces/ISurePromise'
-import { surePromise } from '../../utils/surePromise'
+import { ISurePromise } from '../interfaces/ISurePromise'
+import { surePromiseServer } from '../utils/surePromise'
+import apiServer from './config'
 import { AxiosRequestConfig, AxiosResponse } from 'axios'
-import jsonToURLEncoded from '../../utils/jsonToURLEncoded'
-import apiClient from './instanceClient'
+import jsonToURLEncoded from '../utils/jsonToURLEncoded'
+
 
 export class AxiosService<T, P> {
     
@@ -16,7 +17,7 @@ export class AxiosService<T, P> {
 
     async post (payload: P, url: string): Promise<ISurePromise<T>> {
         try {
-            return await surePromise(apiClient.post<AxiosResponse>(url, payload))
+            return await surePromiseServer(apiServer.post<AxiosResponse>(url, payload))
         } catch (err) {
             throw err
         }
@@ -40,7 +41,7 @@ export class AxiosService<T, P> {
             } else {
                 dataUrl = url
             }
-            return await surePromise(apiClient.get<AxiosResponse>(dataUrl, config))
+            return await surePromiseServer(apiServer.get<AxiosResponse>(dataUrl, config))
         } catch (err) {
 
             throw err
