@@ -3,7 +3,8 @@ import { AxiosResponse } from 'axios'
 
 /**
  ToDo SurePromise
- * Deserialize token user when is login
+ * Se validan todas las peticiones para crear una respuesta custom para tener un mejor manejo de errores
+ * se crean dos funciones, una para el cliente y una para el servidor
  * @return Promise<ISurePromise>
  * @param promise
  * @type Promise<AxiosResponse>

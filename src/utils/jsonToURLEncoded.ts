@@ -1,3 +1,9 @@
+/** ToDo jsonToURLEncoded
+ * Se formatean todos los objetos para convertilos en query params
+ * @param jsonString
+ * @type any
+ * @return string
+ */
 
 const jsonToURLEncoded = (jsonString: any): string => {
     return validateSchema(jsonString)
@@ -9,7 +15,14 @@ const jsonToURLEncoded = (jsonString: any): string => {
         .join('&')
 }
 
-const validateSchema = (object: any) => {
+/** ToDo jsonToURLEncoded
+ * Se valida que ninguna variable esté vacía para eliminarla del qery
+ * @param object
+ * @type any
+ * @return string[]
+ */
+
+const validateSchema = (object: any): string[] => {
    return  Object.keys(object).map((key, index, keys) => {
        console.log(object[key])
        console.log(object)

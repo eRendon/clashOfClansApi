@@ -7,7 +7,7 @@ import apiClient from './instanceClient'
 export class AxiosService<T, P> {
     
     /** ToDo Post Data
-     * Post fetch whit axios instance in apiClient
+     * Peticiones post con la instancia de axios
      * @param payload
      * @param url
      * @type string
@@ -23,7 +23,7 @@ export class AxiosService<T, P> {
     }
 
     /** ToDo Get Data
-     * Post fetch whit axios instance in apiClient
+     * Peticiones get con la instancia de axios
      * @param payload
      * @param config
      * @param url

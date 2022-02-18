@@ -1,5 +1,10 @@
 import axios from 'axios'
 
+/** ToDo Config Axios
+ * Configuración de axios con la base url direccionada hacia la API externa en donde se tiene el bearer de la API
+ */
+
+
 const apiServer = axios.create({
     baseURL: 'https://api.clashofclans.com/v1/',
     headers: {

@@ -1,5 +1,9 @@
 import { IClans } from '../../interfaces/IClans'
-import { render } from 'react-dom'
+
+/** ToDo Interface Props Component
+ * Una interface para inferir el tipo de dato que recibe el componente
+ */
+
 
 interface Props {
     clans: IClans[]

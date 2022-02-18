@@ -8,7 +8,7 @@ import jsonToURLEncoded from '../utils/jsonToURLEncoded'
 export class AxiosService<T, P> {
     
     /** ToDo Post Data
-     * Post fetch whit axios instance in apiClient
+     * Post fetch whit axios instance in apiServer
      * @param payload
      * @param url
      * @type string
@@ -24,7 +24,7 @@ export class AxiosService<T, P> {
     }
 
     /** ToDo Get Data
-     * Post fetch whit axios instance in apiClient
+     * Get fetch whit axios instance in apiServer
      * @param payload
      * @param config
      * @param url

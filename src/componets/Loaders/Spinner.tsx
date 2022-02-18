@@ -6,6 +6,10 @@ interface IProps {
 
 function spinner(props: IProps) {
 
+    /** ToDo showComponent
+     * Se valida la propiedad para mostrar el loader
+     */
+
     const showComponent = () => {
         if (props.show) {
             return 'show'
@@ -16,7 +20,7 @@ function spinner(props: IProps) {
                 <div className="overlay"></div>
                 <div  className={`spanner ${showComponent()}`}>
                     <div className={`loader ${showComponent()}`}></div>
-                    <p>Uploading music file, please be patient.</p>
+                    <p>Estamos buscando los clanes.</p>
                 </div>
             </div>
         )
